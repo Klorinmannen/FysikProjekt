@@ -11,9 +11,3 @@ PhysicsObject::~PhysicsObject() {
 
 	
 }
-
-void PhysicsObject::move() {
-
-	this->pos += this->vel;
-
-}

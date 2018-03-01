@@ -2,7 +2,7 @@
 
 #include"SFML\Graphics.hpp"
 
-class GameObject {
+class GameObject : public sf::Drawable {
 
 protected:
 
@@ -12,9 +12,10 @@ protected:
 	sf::Color color;
 	int arrayIndex;
 
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
 
-	GameObject(sf::Vector2f pos, sf::Vector2f size, sf::Color color);
+	GameObject(sf::Vector2f pos, sf::Vector2f size, std::string texture);
 	GameObject();
 	~GameObject();
 

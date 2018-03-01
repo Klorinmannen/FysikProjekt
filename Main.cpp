@@ -4,6 +4,7 @@ int main() {
 
 	sf::RenderWindow window(sf::VideoMode(1600, 900), "2D Physics Stuff", sf::Style::Default);
 	Game game;
+	sf::Clock clock;
 
 	while (window.isOpen()) {
 
@@ -14,6 +15,11 @@ int main() {
 				window.close();
 		
 		}
+
+
+
+
+		game.update(clock.getElapsedTime().asSeconds);
 
 		window.clear();
 
