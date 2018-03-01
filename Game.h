@@ -17,8 +17,8 @@ private:
 	sf::Texture backTexture;
 	sf::Sprite backSprite;
 
-	std::vector<GameObject> staticObjects;
-	std::vector<PhysicsObject> physObjects;
+	std::vector<GameObject> staticObjects; //obstacles, none moveable objects
+	std::vector<PhysicsObject> physObjects; //numbers of targets to hit
 	Player player;
 
 	Scene sceneController;
@@ -28,7 +28,7 @@ private:
 	//Private functions
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void initScene(int scene);
-	void inputs();
+	void inputs(float dt);
 	void changeScene(int scene);
 	void collision();
 public:

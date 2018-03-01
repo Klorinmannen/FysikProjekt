@@ -5,7 +5,8 @@
 class GameObject : public sf::Drawable {
 
 protected:
-
+	sf::Texture objectTexture;
+	sf::Sprite objectSprite;
 	sf::Vector2f pos;	//Bottom left of quad
 	sf::Vector2f size;
 	bool isStatic;
@@ -27,5 +28,6 @@ public:
 
 	//Set
 	void setIndex(int index);
+	bool checkCollision(sf::Vector2f b_pos);
 
 };

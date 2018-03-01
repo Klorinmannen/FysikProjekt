@@ -1,22 +1,5 @@
 #ifndef SCENE_H
 #define SCENE_H
-<<<<<<< HEAD
-#include<string>
-
-class Scene
-{
-private:
-
-	std::string backString;
-
-public:
-	Scene();
-	~Scene();
-	std::string getBackGround();
-	
-};
-=======
-
 #include"SFML\Graphics.hpp"
 #include<string>
 #include<vector>
@@ -24,6 +7,8 @@ public:
 #include"PhysicsObject.h"
 
 class Scene {
+public:
+	enum c_scene{first, second, third};
 
 private:
 
@@ -44,15 +29,13 @@ public:
 	Scene();
 	~Scene();
 
-	void loadObjects(std::vector<PhysicsObject>* pO,
-		std::vector<GameObject>* gO);
+	void loadObjects(std::vector<PhysicsObject>* pO, std::vector<GameObject>* gO);
 	void readFile(int scene);
 
 	//Get
 	std::string getBackground(void) const;
 	float getAirDensity(void) const;
+	void reset(c_scene in_scene);
 
 };
-
->>>>>>> origin/master
 #endif // !SCENE_H

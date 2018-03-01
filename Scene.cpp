@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-#include "Scene.h"
-
-std::string Scene::getBackGround()
-{
-	return this->backString;
-}
-=======
 #include"Scene.h"
-
 Scene::Scene() {
 
 
@@ -98,7 +89,7 @@ float Scene::readInFloat(std::string line, int& strCounter) {
 
 }
 
-void Scene::loadObjects(std::vector<PhysicsObject*>* pO, std::vector<GameObject>* gO) {
+void Scene::loadObjects(std::vector<PhysicsObject>* pO, std::vector<GameObject>* gO) {
 
 	int counter = 0;
 
@@ -113,7 +104,7 @@ void Scene::loadObjects(std::vector<PhysicsObject*>* pO, std::vector<GameObject>
 
 		case 'P':
 
-			gO->push_back(PhysicsObject(this->positions.at[counter],
+			pO->push_back(PhysicsObject(this->positions.at[counter],
 				this->sizes[counter], this->textures[counter]));
 			break;
 
@@ -139,4 +130,20 @@ float Scene::getAirDensity(void) const{
 	return this->airDensity;
 
 }
->>>>>>> origin/master
+
+void Scene::reset(c_scene in_scene)
+{
+	//set new scene, swithc on enum
+	switch (in_scene)
+	{
+	case Scene::first:
+		break;
+	case Scene::second:
+		break;
+	case Scene::third:
+		break;
+	default:
+		//generate error
+		break;
+	}
+}
